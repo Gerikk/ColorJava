@@ -33,9 +33,9 @@ public class Color {
         } else {
             this.hex = hexadecimal;
             Color color = new Color(
-                    Integer.valueOf(hexadecimal.substring(1, 3), 16),
-                    Integer.valueOf(hexadecimal.substring(3, 5), 16),
-                    Integer.valueOf(hexadecimal.substring(5, 7), 16)
+                    Integer.valueOf(this.hex.substring(1, 3), 16),
+                    Integer.valueOf(this.hex.substring(3, 5), 16),
+                    Integer.valueOf(this.hex.substring(5, 7), 16)
             );
 
             this.red = color.getRed();
@@ -77,17 +77,24 @@ public class Color {
     }
 
     public void setHex(String hex) {
-        this.hex = hex;
-        Color color = new Color(
-                Integer.valueOf(hex.substring(1, 3), 16),
-                Integer.valueOf(hex.substring(3, 5), 16),
-                Integer.valueOf(hex.substring(5, 7), 16)
-        );
 
-        this.red = color.getRed();
-        this.green = color.getGreen();
-        this.blue = color.getBlue();
+        if (hex.charAt(0) != '#') {
+            throw new IllegalArgumentException();
+        } else if ((hex.length() != 7)) {
+            throw new IllegalArgumentException();
+        } else {
 
+            this.hex = hex;
+            Color color = new Color(
+                    Integer.valueOf(hex.substring(1, 3), 16),
+                    Integer.valueOf(hex.substring(3, 5), 16),
+                    Integer.valueOf(hex.substring(5, 7), 16)
+            );
+
+            this.red = color.getRed();
+            this.green = color.getGreen();
+            this.blue = color.getBlue();
+        }
     }
 
     @Override

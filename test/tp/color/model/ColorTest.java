@@ -23,61 +23,61 @@ class ColorTest {
      */
     @Test
     void testConstructorHexa() {
-        assertEquals(colorHexa.getRed(), 213, "Erreur! la valeur de Red est incorrecte");
-        assertEquals(colorHexa.getGreen(), 141, "Erreur! la valeur de Green est incorrecte");
-        assertEquals(colorHexa.getBlue(), 53, "Erreur! la valeur de Blue est incorrecte");
+        assertEquals(213, colorHexa.getRed(), "Erreur! la valeur de Red est incorrecte");
+        assertEquals(141, colorHexa.getGreen(), "Erreur! la valeur de Green est incorrecte");
+        assertEquals(53, colorHexa.getBlue(), "Erreur! la valeur de Blue est incorrecte");
 
     }
 
     @Test
     void testToStringHexa() {
-        assertEquals(colorHexa.toString(),
-                "[value=" + colorHexa.getHex() + ", r=" + colorHexa.getRed() + ", g=" + colorHexa.getGreen() + ", b=" + colorHexa.getBlue() + "]",
+        assertEquals("[value=" + colorHexa.getHex() + ", r=" + colorHexa.getRed() + ", g=" + colorHexa.getGreen() + ", b=" + colorHexa.getBlue() + "]",
+                colorHexa.toString(),
                 "Méthode toString ratée pour Hexa.");
     }
 
     @Test
     void testGetRed() {
-        assertEquals(colorHexa.getRed(), 213, "Erreur! la valeur de Red est incorrecte");
+        assertEquals(213, colorHexa.getRed(), "Erreur! la valeur de Red est incorrecte");
     }
 
     @Test
     void testSetRedHexa() {
         colorHexa.setRed(34);
-        assertEquals(colorHexa.getRed(), 34, "Erreur! setRed pas bon");
+        assertEquals(34, colorHexa.getRed(), "Erreur! setRed pas bon");
     }
 
     @Test
     void testGetGreen() {
-        assertEquals(colorHexa.getGreen(), 141, "Erreur! la valeur de Green est incorrecte");
+        assertEquals(141, colorHexa.getGreen(), "Erreur! la valeur de Green est incorrecte");
     }
 
     @Test
     void testSetGreenHexa() {
         colorHexa.setGreen(34);
-        assertEquals(colorHexa.getGreen(), 34, "Erreur! setGreen pas bon");
+        assertEquals(34, colorHexa.getGreen(), "Erreur! setGreen pas bon");
     }
 
     @Test
     void testGetBlue() {
-        assertEquals(colorHexa.getBlue(), 53, "Erreur! la valeur de Blue est incorrecte");
+        assertEquals(53, colorHexa.getBlue(), "Erreur! la valeur de Blue est incorrecte");
     }
 
     @Test
     void testSetBlueHexa() {
         colorHexa.setBlue(34);
-        assertEquals(colorHexa.getBlue(), 34, "Erreur! setBlue pas bon");
+        assertEquals(34, colorHexa.getBlue(), "Erreur! setBlue pas bon");
     }
 
     @Test
     void testGetHexValueHexa() {
-        assertEquals(colorHexa.getHex(), "#D58D35", "Error getHEx");
+        assertEquals("#D58D35", colorHexa.getHex(), "Error getHEx");
     }
 
     @Test
     void testSetHexValueHex() {
         colorHexa.setHex("#D3D3D3");
-        assertEquals(colorHexa.getHex(), "#D3D3D3", "Error setHex");
+        assertEquals("#D3D3D3", colorHexa.getHex(), "Error setHex");
     }
 
     @Test
@@ -91,73 +91,67 @@ class ColorTest {
      */
     @Test
     void testConstructorRGB() {
-        assertEquals(colorRGB.getRed(), 213, "Erreur! la valeur de Red est incorrecte");
-        assertEquals(colorRGB.getGreen(), 141, "Erreur! la valeur de Green est incorrecte");
-        assertEquals(colorRGB.getBlue(), 53, "Erreur! la valeur de Blue est incorrecte");
+        assertEquals(213, colorRGB.getRed(), "Erreur! la valeur de Red est incorrecte");
+        assertEquals(141, colorRGB.getGreen(), "Erreur! la valeur de Green est incorrecte");
+        assertEquals(53, colorRGB.getBlue(), "Erreur! la valeur de Blue est incorrecte");
     }
 
     @Test
     void testToStringRGB() {
-        assertEquals(colorRGB.toString(),
-                "[value=" + colorRGB.getHex() + ", r=" + colorRGB.getRed() + ", g=" + colorRGB.getGreen() + ", b=" + colorRGB.getBlue() + "]",
+        assertEquals("[value=" + colorRGB.getHex() + ", r=" + colorRGB.getRed() + ", g=" + colorRGB.getGreen() + ", b=" + colorRGB.getBlue() + "]",
+                colorRGB.toString(),
                 "Méthode toString ratée pour RGB.");
     }
 
     @Test
     void testGetRGBRed() {
-        assertEquals(colorRGB.getRed(), 213, "Erreur! la valeur de Red est incorrecte");
+        assertEquals(213, colorRGB.getRed(), "Erreur! la valeur de Red est incorrecte");
     }
 
     @Test
     void testSetRedRGB() {
         colorRGB.setRed(34);
-        assertEquals(colorRGB.getRed(), 34, "Erreur! setRed pas bon");
+        assertEquals(34, colorRGB.getRed(), "Erreur! setRed pas bon");
     }
 
     @Test
     void testGetRGBGreen() {
-        assertEquals(colorRGB.getGreen(), 141, "Erreur! la valeur de Green est incorrecte");
+        assertEquals(141, colorRGB.getGreen(), "Erreur! la valeur de Green est incorrecte");
     }
 
     @Test
     void testSetGreenRGB() {
         colorRGB.setGreen(34);
-        assertEquals(colorRGB.getGreen(), 34, "Erreur! setGreen pas bon");
+        assertEquals(34, colorRGB.getGreen(), "Erreur! setGreen pas bon");
     }
 
     @Test
     void testGetRGBBlue() {
-        assertEquals(colorRGB.getBlue(), 53, "Erreur! la valeur de Blue est incorrecte");
+        assertEquals(53, colorRGB.getBlue(), "Erreur! la valeur de Blue est incorrecte");
     }
 
     @Test
     void testSetBlueRGB() {
         colorRGB.setBlue(34);
-        assertEquals(colorRGB.getBlue(), 34, "Erreur! setBlue pas bon");
+        assertEquals(34, colorRGB.getBlue(), "Erreur! setBlue pas bon");
     }
 
     @Test
     void testGetHexValueRGB() {
-        assertEquals(colorRGB.getHex(), "#D58D35", "Error getHEx");
+        assertEquals("#D58D35", colorRGB.getHex(), "Error getHEx");
     }
 
     @Test
     void testSetHexValueRGB() {
-        colorRGB.setHex("#D3D3D3");
+        colorRGB.setHex("#D3D3D4");
 
-        Color color = new Color(
-                Integer.valueOf(colorRGB.getHex().substring(1, 3), 16),
-                Integer.valueOf(colorRGB.getHex().substring(3, 5), 16),
-                Integer.valueOf(colorRGB.getHex().substring(5, 7), 16)
-        );
+        assertEquals(Integer.valueOf(colorRGB.getHex().substring(1, 3), 16), colorRGB.getRed(), "Erreur couleur rouge");
 
-        assertEquals(color.getGreen(), Integer.valueOf(colorRGB.getHex().substring(1, 3), 16), "Erreur couleur rouge");
+        assertEquals(Integer.valueOf(colorRGB.getHex().substring(3, 5), 16), colorRGB.getGreen(), "Erreur couleur verte");
 
-        assertEquals(color.getGreen(), Integer.valueOf(colorRGB.getHex().substring(3, 5), 16), "Erreur couleur verte");
+        assertEquals(Integer.valueOf(colorRGB.getHex().substring(5, 7), 16), colorRGB.getBlue(), "Erreur couleur bleue");
 
-        assertEquals(color.getBlue(), Integer.valueOf(colorRGB.getHex().substring(5, 7), 16), "Erreur couleur bleue");
-
-        assertEquals(colorRGB.getHex(), "#D3D3D3", "Error setHex");
+        assertEquals("#D3D3D4", colorRGB.getHex(), "Error setHex");
     }
 
     @Test
