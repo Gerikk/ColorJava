@@ -68,11 +68,11 @@ public class Color {
         this.hex = String.format("#%02X%02X%02X", this.red, this.green, this.blue);
     }
 
-    public String getHex() {
+    public String getHexValue() {
         return this.hex;
     }
 
-    public void setHex(String hex) {
+    public void setHexValue(String hex) {
 
         if (hex.charAt(0) != '#') {
             throw new IllegalArgumentException();
@@ -90,6 +90,6 @@ public class Color {
 
     @Override
     public String toString() {
-        return "[value=" + this.getHex() + ", r=" + this.getRed() + ", g=" + this.getGreen() + ", b=" + this.getBlue() + "]";
+        return "[value=" + this.getHexValue() + ", r=" + this.getRed() + ", g=" + this.getGreen() + ", b=" + this.getBlue() + "]";
     }
 }
