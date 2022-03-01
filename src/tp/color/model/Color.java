@@ -11,14 +11,12 @@ public class Color {
 
         if (red < 0 || red > 255 || green < 0 || green > 255 || blue < 0 || blue > 255) {
             throw new IllegalArgumentException();
-        }
-        else {
+        } else {
             this.red = red;
             this.green = green;
             this.blue = blue;
             this.hex = String.format("#%02X%02X%02X", this.red, this.green, this.blue);
         }
-
     }
 
     public Color(String hexadecimal) {
