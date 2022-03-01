@@ -7,7 +7,6 @@ public class Color {
     private int blue;
     private String hex;
 
-
     public Color(int red, int green, int blue) throws IllegalArgumentException {
 
         if (red < 0 || red >= 255) {
@@ -27,7 +26,7 @@ public class Color {
 
     public Color(String hexadecimal) throws IllegalArgumentException {
 
-        if (hexadecimal.charAt(0) != '#') {
+        if (hexadecimal.charAt(0) != '#' || hexadecimal.length() != 7) {
             throw new IllegalArgumentException();
         }
         this.hex = hexadecimal;
@@ -62,6 +61,10 @@ public class Color {
 
     public int getBlue() {
         return this.blue;
+    }
+
+    public void setBlue(int blue) {
+        this.blue = blue;
     }
 
     public String getHex() {
