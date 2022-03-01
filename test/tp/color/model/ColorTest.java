@@ -77,7 +77,7 @@ class ColorTest {
 
     @Test
     void testRGBConstructorThrowsExceptionIllegalArgument(){
-        assertThrows(IllegalArgumentException.class, ()-> new Color(-1, 700, 34));
+        assertThrows(IllegalArgumentException.class, ()-> new Color(-1, 255, 53));
     }
 
 
