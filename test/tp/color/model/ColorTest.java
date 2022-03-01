@@ -4,8 +4,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 class ColorTest {
 
@@ -45,6 +44,9 @@ class ColorTest {
     void testSetRedHexa() {
         colorHexa.setRed(34);
         assertEquals(34, colorHexa.getRed(), "Erreur! setRed pas bon");
+        assertEquals(141, colorHexa.getGreen(), "Erreur! la valeur de Green est incorrecte");
+        assertEquals(53, colorHexa.getBlue(), "Erreur! la valeur de Blue est incorrecte");
+        assertNotEquals("#D58D35", colorHexa.getHex(), "Erreur !  code Hexa non modifié");
     }
 
     @Test
@@ -55,7 +57,11 @@ class ColorTest {
     @Test
     void testSetGreenHexa() {
         colorHexa.setGreen(34);
+        assertEquals(213, colorHexa.getRed(), "Erreur! la valeur de Red est incorrecte");
         assertEquals(34, colorHexa.getGreen(), "Erreur! setGreen pas bon");
+        assertEquals(53, colorHexa.getBlue(), "Erreur! la valeur de Blue est incorrecte");
+        assertNotEquals("#D58D35", colorHexa.getHex(), "Erreur !  code Hexa non modifié");
+
     }
 
     @Test
@@ -66,7 +72,10 @@ class ColorTest {
     @Test
     void testSetBlueHexa() {
         colorHexa.setBlue(34);
+        assertEquals(213, colorHexa.getRed(), "Erreur! la valeur de Red est incorrecte");
         assertEquals(34, colorHexa.getBlue(), "Erreur! setBlue pas bon");
+        assertEquals(141, colorHexa.getGreen(), "Erreur! la valeur de Green est incorrecte");
+        assertNotEquals("#D58D35", colorHexa.getHex(), "Erreur !  code Hexa non modifié");
     }
 
     @Test
@@ -77,6 +86,13 @@ class ColorTest {
     @Test
     void testSetHexValueHex() {
         colorHexa.setHex("#D3D3D3");
+
+        assertEquals(211, colorHexa.getRed(), "Rouge incorrect");
+
+        assertEquals(211, colorHexa.getGreen(), "Vert incorrect");
+
+        assertEquals(211, colorHexa.getBlue(), "Bleu incorrect");
+
         assertEquals("#D3D3D3", colorHexa.getHex(), "Error setHex");
     }
 
@@ -93,6 +109,7 @@ class ColorTest {
         assertEquals(213, colorRGB.getRed(), "Erreur! la valeur de Red est incorrecte");
         assertEquals(141, colorRGB.getGreen(), "Erreur! la valeur de Green est incorrecte");
         assertEquals(53, colorRGB.getBlue(), "Erreur! la valeur de Blue est incorrecte");
+        assertEquals("#D58D35", colorRGB.getHex(), "Erreur Code hexa incorrect");
     }
 
     @Test
@@ -111,6 +128,9 @@ class ColorTest {
     void testSetRedRGB() {
         colorRGB.setRed(34);
         assertEquals(34, colorRGB.getRed(), "Erreur! setRed pas bon");
+        assertEquals(141, colorRGB.getGreen(), "Erreur! la valeur de Green est incorrecte");
+        assertEquals(53, colorRGB.getBlue(), "Erreur! la valeur de Blue est incorrecte");
+        assertNotEquals("#D58D35", colorRGB.getHex(), "Erreur !  code Hexa non modifié");
     }
 
     @Test
@@ -121,7 +141,10 @@ class ColorTest {
     @Test
     void testSetGreenRGB() {
         colorRGB.setGreen(34);
+        assertEquals(213, colorRGB.getRed(), "Erreur! la valeur de Red est incorrecte");
         assertEquals(34, colorRGB.getGreen(), "Erreur! setGreen pas bon");
+        assertEquals(53, colorRGB.getBlue(), "Erreur! la valeur de Blue est incorrecte");
+        assertNotEquals("#D58D35", colorRGB.getHex(), "Erreur !  code Hexa non modifié");
     }
 
     @Test
@@ -132,7 +155,10 @@ class ColorTest {
     @Test
     void testSetBlueRGB() {
         colorRGB.setBlue(34);
+        assertEquals(213, colorRGB.getRed(), "Erreur! la valeur de Red est incorrecte");
         assertEquals(34, colorRGB.getBlue(), "Erreur! setBlue pas bon");
+        assertEquals(141, colorRGB.getGreen(), "Erreur! la valeur de Green est incorrecte");
+        assertNotEquals("#D58D35", colorRGB.getHex(), "Erreur !  code Hexa non modifié");
     }
 
     @Test

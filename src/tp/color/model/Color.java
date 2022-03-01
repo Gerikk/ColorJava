@@ -30,13 +30,13 @@ public class Color {
             throw new IllegalArgumentException();
         } else if ((hexadecimal.length() != 7)) {
             throw new IllegalArgumentException();
+        } else if (hexadecimal.chars().anyMatch(Character::isLowerCase)) {
+            throw new IllegalArgumentException();
         } else {
             this.hex = hexadecimal;
-
-            this.red=Integer.valueOf(this.hex.substring(1, 3), 16);
-            this.green=Integer.valueOf(this.hex.substring(3, 5), 16);
-            this.blue=Integer.valueOf(this.hex.substring(5, 7), 16);
-
+            this.red = Integer.valueOf(this.hex.substring(1, 3), 16);
+            this.green = Integer.valueOf(this.hex.substring(3, 5), 16);
+            this.blue = Integer.valueOf(this.hex.substring(5, 7), 16);
         }
 
     }
@@ -78,12 +78,13 @@ public class Color {
             throw new IllegalArgumentException();
         } else if ((hex.length() != 7)) {
             throw new IllegalArgumentException();
+        } else if (hex.chars().anyMatch(Character::isLowerCase)) {
+            throw new IllegalArgumentException();
         } else {
-
             this.hex = hex;
-            this.red=Integer.valueOf(this.hex.substring(1, 3), 16);
-            this.green=Integer.valueOf(this.hex.substring(3, 5), 16);
-            this.blue=Integer.valueOf(this.hex.substring(5, 7), 16);
+            this.red = Integer.valueOf(this.hex.substring(1, 3), 16);
+            this.green = Integer.valueOf(this.hex.substring(3, 5), 16);
+            this.blue = Integer.valueOf(this.hex.substring(5, 7), 16);
         }
     }
 
