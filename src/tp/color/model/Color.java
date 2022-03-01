@@ -26,7 +26,9 @@ public class Color {
 
     public Color(String hexadecimal) throws IllegalArgumentException {
 
-        if (hexadecimal.charAt(0) != '#') {
+        if (hexadecimal == null) {
+            throw new IllegalArgumentException();
+        } else if (hexadecimal.charAt(0) != '#') {
             throw new IllegalArgumentException();
         } else if ((hexadecimal.length() != 7)) {
             throw new IllegalArgumentException();
@@ -46,8 +48,12 @@ public class Color {
     }
 
     public void setRed(int red) {
-        this.red = red;
-        this.hex = String.format("#%02X%02X%02X", this.red, this.green, this.blue);
+        if (red < 0 || red > 255) {
+            throw new IllegalArgumentException();
+        } else {
+            this.red = red;
+            this.hex = String.format("#%02X%02X%02X", this.red, this.green, this.blue);
+        }
     }
 
     public int getGreen() {
@@ -55,8 +61,12 @@ public class Color {
     }
 
     public void setGreen(int green) {
-        this.green = green;
-        this.hex = String.format("#%02X%02X%02X", this.red, this.green, this.blue);
+        if (green < 0 || green > 255) {
+            throw new IllegalArgumentException();
+        } else {
+            this.green = green;
+            this.hex = String.format("#%02X%02X%02X", this.red, this.green, this.blue);
+        }
     }
 
     public int getBlue() {
@@ -64,8 +74,12 @@ public class Color {
     }
 
     public void setBlue(int blue) {
-        this.blue = blue;
-        this.hex = String.format("#%02X%02X%02X", this.red, this.green, this.blue);
+        if (blue < 0 || blue > 255) {
+            throw new IllegalArgumentException();
+        } else {
+            this.blue = blue;
+            this.hex = String.format("#%02X%02X%02X", this.red, this.green, this.blue);
+        }
     }
 
     public String getHexValue() {
@@ -74,11 +88,15 @@ public class Color {
 
     public void setHexValue(String hex) {
 
-        if (hex.charAt(0) != '#') {
+        if (hex == null) {
+            throw new IllegalArgumentException();
+        } else if (hex.charAt(0) != '#') {
             throw new IllegalArgumentException();
         } else if ((hex.length() != 7)) {
             throw new IllegalArgumentException();
         } else if (hex.chars().anyMatch(Character::isLowerCase)) {
+            throw new IllegalArgumentException();
+        } else if (hex.isEmpty()) {
             throw new IllegalArgumentException();
         } else {
             this.hex = hex;
