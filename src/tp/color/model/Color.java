@@ -7,13 +7,9 @@ public class Color {
     private int blue;
     private String hex;
 
-    public Color(int red, int green, int blue) throws IllegalArgumentException {
+    public Color(int red, int green, int blue) {
 
-        if (red < 0 || red > 255) {
-            throw new IllegalArgumentException();
-        } else if (green < 0 || green > 255) {
-            throw new IllegalArgumentException();
-        } else if (blue < 0 || blue > 255) {
+        if (red < 0 || red > 255 || green < 0 || green > 255 || blue < 0 || blue > 255) {
             throw new IllegalArgumentException();
         }
 
@@ -24,15 +20,9 @@ public class Color {
         this.hex = String.format("#%02X%02X%02X", this.red, this.green, this.blue);
     }
 
-    public Color(String hexadecimal) throws IllegalArgumentException {
+    public Color(String hexadecimal) {
 
-        if (hexadecimal == null) {
-            throw new IllegalArgumentException();
-        } else if (hexadecimal.charAt(0) != '#') {
-            throw new IllegalArgumentException();
-        } else if ((hexadecimal.length() != 7)) {
-            throw new IllegalArgumentException();
-        } else if (hexadecimal.chars().anyMatch(Character::isLowerCase)) {
+        if (hexadecimal == null || hexadecimal.charAt(0) != '#' || hexadecimal.length() != 7 || hexadecimal.chars().anyMatch(Character::isLowerCase)) {
             throw new IllegalArgumentException();
         } else {
             this.hex = hexadecimal;
@@ -88,15 +78,7 @@ public class Color {
 
     public void setHexValue(String hex) {
 
-        if (hex == null) {
-            throw new IllegalArgumentException();
-        } else if (hex.charAt(0) != '#') {
-            throw new IllegalArgumentException();
-        } else if ((hex.length() != 7)) {
-            throw new IllegalArgumentException();
-        } else if (hex.chars().anyMatch(Character::isLowerCase)) {
-            throw new IllegalArgumentException();
-        } else if (hex.isEmpty()) {
+        if (hex == null || hex.charAt(0) != '#' || hex.length() != 7 || hex.chars().anyMatch(Character::isLowerCase)) {
             throw new IllegalArgumentException();
         } else {
             this.hex = hex;
