@@ -30,6 +30,13 @@ class ColorTest {
     }
 
     @Test
+    void testToStringHexa() {
+        assertEquals(colorHexa.toString(),
+                "[value=" + colorHexa.getHex() + ", r=" + colorHexa.getRed() + ", g=" + colorHexa.getGreen() + ", b=" + colorHexa.getBlue() + "]",
+                "Méthode toString ratée pour Hexa.");
+    }
+
+    @Test
     void testGetRed() {
         assertEquals(colorHexa.getRed(), 213, "Erreur! la valeur de Red est incorrecte");
     }
@@ -63,9 +70,20 @@ class ColorTest {
     }
 
     @Test
+    void testGetHexValueHexa() {
+        assertEquals(colorHexa.getHex(), "#D58D35", "Error getHEx");
+    }
+
+    @Test
+    void testSetHexValueHex() {
+        colorHexa.setHex("#D3D3D3");
+        assertEquals(colorHexa.getHex(), "#D3D3D3", "Error setHex");
+    }
+
+    @Test
     void testConstructorThrowsExceptionIllegalArgument() {
         //TODO gestion des cas ou le code hexadecimal est composé de lettres uniquement (ex #FFFFFF)
-        assertThrows(IllegalArgumentException.class, () -> new Color("#d58d35"));
+        assertThrows(IllegalArgumentException.class, () -> new Color("#FFFFFF"));
     }
 
     /**
@@ -76,6 +94,13 @@ class ColorTest {
         assertEquals(colorRGB.getRed(), 213, "Erreur! la valeur de Red est incorrecte");
         assertEquals(colorRGB.getGreen(), 141, "Erreur! la valeur de Green est incorrecte");
         assertEquals(colorRGB.getBlue(), 53, "Erreur! la valeur de Blue est incorrecte");
+    }
+
+    @Test
+    void testToStringRGB() {
+        assertEquals(colorRGB.toString(),
+                "[value=" + colorRGB.getHex() + ", r=" + colorRGB.getRed() + ", g=" + colorRGB.getGreen() + ", b=" + colorRGB.getBlue() + "]",
+                "Méthode toString ratée pour RGB.");
     }
 
     @Test
@@ -109,6 +134,30 @@ class ColorTest {
     void testSetBlueRGB() {
         colorRGB.setBlue(34);
         assertEquals(colorRGB.getBlue(), 34, "Erreur! setBlue pas bon");
+    }
+
+    @Test
+    void testGetHexValueRGB() {
+        assertEquals(colorRGB.getHex(), "#D58D35", "Error getHEx");
+    }
+
+    @Test
+    void testSetHexValueRGB() {
+        colorRGB.setHex("#D3D3D3");
+
+        Color color = new Color(
+                Integer.valueOf(colorRGB.getHex().substring(1, 3), 16),
+                Integer.valueOf(colorRGB.getHex().substring(3, 5), 16),
+                Integer.valueOf(colorRGB.getHex().substring(5, 7), 16)
+        );
+
+        assertEquals(color.getGreen(), Integer.valueOf(colorRGB.getHex().substring(1, 3), 16), "Erreur couleur rouge");
+
+        assertEquals(color.getGreen(), Integer.valueOf(colorRGB.getHex().substring(3, 5), 16), "Erreur couleur verte");
+
+        assertEquals(color.getBlue(), Integer.valueOf(colorRGB.getHex().substring(5, 7), 16), "Erreur couleur bleue");
+
+        assertEquals(colorRGB.getHex(), "#D3D3D3", "Error setHex");
     }
 
     @Test

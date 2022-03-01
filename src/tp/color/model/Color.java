@@ -26,20 +26,22 @@ public class Color {
 
     public Color(String hexadecimal) throws IllegalArgumentException {
 
-        if (hexadecimal.charAt(0) != '#' || hexadecimal.length() != 7) {
+        if (hexadecimal.charAt(0) != '#') {
             throw new IllegalArgumentException();
+        } else if ((hexadecimal.length() != 7)) {
+            throw new IllegalArgumentException();
+        } else {
+            this.hex = hexadecimal;
+            Color color = new Color(
+                    Integer.valueOf(hexadecimal.substring(1, 3), 16),
+                    Integer.valueOf(hexadecimal.substring(3, 5), 16),
+                    Integer.valueOf(hexadecimal.substring(5, 7), 16)
+            );
+
+            this.red = color.getRed();
+            this.green = color.getGreen();
+            this.blue = color.getBlue();
         }
-        this.hex = hexadecimal;
-
-        Color color = new Color(
-                Integer.valueOf(hexadecimal.substring(1, 3), 16),
-                Integer.valueOf(hexadecimal.substring(3, 5), 16),
-                Integer.valueOf(hexadecimal.substring(5, 7), 16)
-        );
-
-        this.red = color.getRed();
-        this.green = color.getGreen();
-        this.blue = color.getBlue();
 
     }
 
@@ -49,6 +51,7 @@ public class Color {
 
     public void setRed(int red) {
         this.red = red;
+        this.hex = String.format("#%02X%02X%02X", this.red, this.green, this.blue);
     }
 
     public int getGreen() {
@@ -57,6 +60,7 @@ public class Color {
 
     public void setGreen(int green) {
         this.green = green;
+        this.hex = String.format("#%02X%02X%02X", this.red, this.green, this.blue);
     }
 
     public int getBlue() {
@@ -65,9 +69,29 @@ public class Color {
 
     public void setBlue(int blue) {
         this.blue = blue;
+        this.hex = String.format("#%02X%02X%02X", this.red, this.green, this.blue);
     }
 
     public String getHex() {
         return this.hex;
+    }
+
+    public void setHex(String hex) {
+        this.hex = hex;
+        Color color = new Color(
+                Integer.valueOf(hex.substring(1, 3), 16),
+                Integer.valueOf(hex.substring(3, 5), 16),
+                Integer.valueOf(hex.substring(5, 7), 16)
+        );
+
+        this.red = color.getRed();
+        this.green = color.getGreen();
+        this.blue = color.getBlue();
+
+    }
+
+    @Override
+    public String toString() {
+        return "[value=" + this.getHex() + ", r=" + this.getRed() + ", g=" + this.getGreen() + ", b=" + this.getBlue() + "]";
     }
 }
