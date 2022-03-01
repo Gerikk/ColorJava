@@ -9,11 +9,11 @@ public class Color {
 
     public Color(int red, int green, int blue) throws IllegalArgumentException {
 
-        if (red < 0 || red >= 255) {
+        if (red < 0 || red > 255) {
             throw new IllegalArgumentException();
-        } else if (green < 0 || green >= 255) {
+        } else if (green < 0 || green > 255) {
             throw new IllegalArgumentException();
-        } else if (blue < 0 || blue >= 255) {
+        } else if (blue < 0 || blue > 255) {
             throw new IllegalArgumentException();
         }
 
@@ -32,15 +32,11 @@ public class Color {
             throw new IllegalArgumentException();
         } else {
             this.hex = hexadecimal;
-            Color color = new Color(
-                    Integer.valueOf(this.hex.substring(1, 3), 16),
-                    Integer.valueOf(this.hex.substring(3, 5), 16),
-                    Integer.valueOf(this.hex.substring(5, 7), 16)
-            );
 
-            this.red = color.getRed();
-            this.green = color.getGreen();
-            this.blue = color.getBlue();
+            this.red=Integer.valueOf(this.hex.substring(1, 3), 16);
+            this.green=Integer.valueOf(this.hex.substring(3, 5), 16);
+            this.blue=Integer.valueOf(this.hex.substring(5, 7), 16);
+
         }
 
     }
@@ -85,15 +81,9 @@ public class Color {
         } else {
 
             this.hex = hex;
-            Color color = new Color(
-                    Integer.valueOf(hex.substring(1, 3), 16),
-                    Integer.valueOf(hex.substring(3, 5), 16),
-                    Integer.valueOf(hex.substring(5, 7), 16)
-            );
-
-            this.red = color.getRed();
-            this.green = color.getGreen();
-            this.blue = color.getBlue();
+            this.red=Integer.valueOf(this.hex.substring(1, 3), 16);
+            this.green=Integer.valueOf(this.hex.substring(3, 5), 16);
+            this.blue=Integer.valueOf(this.hex.substring(5, 7), 16);
         }
     }
 

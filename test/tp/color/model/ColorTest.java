@@ -82,8 +82,7 @@ class ColorTest {
 
     @Test
     void testConstructorThrowsExceptionIllegalArgument() {
-        //TODO gestion des cas ou le code hexadecimal est composé de lettres uniquement (ex #FFFFFF)
-        assertThrows(IllegalArgumentException.class, () -> new Color("#FFFFFF"));
+        assertThrows(IllegalArgumentException.class, () -> new Color("#fFFFFF"));
     }
 
     /**
