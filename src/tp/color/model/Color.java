@@ -7,6 +7,12 @@ public class Color {
     private int blue;
 
 
+    public Color(int red, int green, int blue) throws IllegalArgumentException{
+        this.red = red;
+        this.green = green;
+        this.blue = blue;
+    }
+
     public Color(String hexadecimal) throws IllegalArgumentException{
 
         java.awt.Color color =  java.awt.Color.decode(hexadecimal);

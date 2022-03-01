@@ -8,34 +8,40 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ColorTest {
 
-    private Color color;
+    private Color colorHexa;
+    private Color colorRGB;
 
     @BeforeEach
     void setUp(){
-        color = new Color("#D58D35");
+        colorHexa = new Color("#D58D35");
+        colorRGB = new Color(213, 141, 53);
     }
 
+
+    /**
+     * Tests Hexadecimal
+     */
     @Test
-    void testConstructor(){
-        assertEquals(color.getRed(), 213, "Erreur! la valeur de Red est incorrecte");
-        assertEquals(color.getGreen(), 141, "Erreur! la valeur de Green est incorrecte");
-        assertEquals(color.getBlue(), 53, "Erreur! la valeur de Blue est incorrecte");
+    void testConstructorHexa(){
+        assertEquals(colorHexa.getRed(), 213, "Erreur! la valeur de Red est incorrecte");
+        assertEquals(colorHexa.getGreen(), 141, "Erreur! la valeur de Green est incorrecte");
+        assertEquals(colorHexa.getBlue(), 53, "Erreur! la valeur de Blue est incorrecte");
 
     }
 
     @Test
     void testGetRed(){
-        assertEquals(color.getRed(), 213, "Erreur! la valeur de Red est incorrecte");
+        assertEquals(colorHexa.getRed(), 213, "Erreur! la valeur de Red est incorrecte");
     }
 
     @Test
     void testGetGreen(){
-        assertEquals(color.getGreen(), 141, "Erreur! la valeur de Green est incorrecte");
+        assertEquals(colorHexa.getGreen(), 141, "Erreur! la valeur de Green est incorrecte");
     }
 
     @Test
     void testGetBlue(){
-        assertEquals(color.getBlue(), 53, "Erreur! la valeur de Blue est incorrecte");
+        assertEquals(colorHexa.getBlue(), 53, "Erreur! la valeur de Blue est incorrecte");
     }
 
     @Test
@@ -43,9 +49,42 @@ class ColorTest {
         assertThrows(IllegalArgumentException.class, ()-> new Color("Test"));
     }
 
+
+    /**
+     * Tests RGB
+     */
+    @Test
+    void testConstructorRGB(){
+        assertEquals(colorRGB.getRed(), 213, "Erreur! la valeur de Red est incorrecte");
+        assertEquals(colorRGB.getGreen(), 141, "Erreur! la valeur de Green est incorrecte");
+        assertEquals(colorRGB.getBlue(), 53, "Erreur! la valeur de Blue est incorrecte");
+    }
+
+    @Test
+    void testGetRGBRed(){
+        assertEquals(colorRGB.getRed(), 213, "Erreur! la valeur de Red est incorrecte");
+    }
+
+    @Test
+    void testGetRGBGreen(){
+        assertEquals(colorRGB.getGreen(), 141, "Erreur! la valeur de Green est incorrecte");
+    }
+
+    @Test
+    void testGetRGBBlue(){
+        assertEquals(colorRGB.getBlue(), 53, "Erreur! la valeur de Blue est incorrecte");
+    }
+
+    @Test
+    void testRGBConstructorThrowsExceptionIllegalArgument(){
+        assertThrows(IllegalArgumentException.class, ()-> new Color(-1, 700, 34));
+    }
+
+
     @AfterEach
     void tearDown(){
-        color = null;
+        colorHexa = null;
+        colorRGB = null;
     }
 
 }
