@@ -7,9 +7,12 @@ public class Color {
     private int blue;
     private String hex;
 
-    public Color(int red, int green, int blue) {
+    private static final int lowerColorLimit = 0;
+    private static final int higherColorLimit = 255;
+    private static final int hexCodeLength = 7;
 
-        if (red < 0 || red > 255 || green < 0 || green > 255 || blue < 0 || blue > 255) {
+    public Color(int red, int green, int blue) {
+        if (red < lowerColorLimit || red > higherColorLimit || green < lowerColorLimit || green > higherColorLimit || blue < lowerColorLimit || blue > higherColorLimit) {
             throw new IllegalArgumentException();
         } else {
             this.red = red;
@@ -20,8 +23,7 @@ public class Color {
     }
 
     public Color(String hexadecimal) {
-
-        if (hexadecimal == null || hexadecimal.charAt(0) != '#' || hexadecimal.length() != 7 || hexadecimal.chars().anyMatch(Character::isLowerCase)) {
+        if (hexadecimal == null || hexadecimal.charAt(0) != '#' || hexadecimal.length() != hexCodeLength || hexadecimal.chars().anyMatch(Character::isLowerCase)) {
             throw new IllegalArgumentException();
         } else {
             this.hex = hexadecimal;
@@ -29,7 +31,6 @@ public class Color {
             this.green = Integer.valueOf(this.hex.substring(3, 5), 16);
             this.blue = Integer.valueOf(this.hex.substring(5, 7), 16);
         }
-
     }
 
     public int getRed() {
@@ -37,7 +38,7 @@ public class Color {
     }
 
     public void setRed(int red) {
-        if (red < 0 || red > 255) {
+        if (red < lowerColorLimit || red > higherColorLimit) {
             throw new IllegalArgumentException();
         } else {
             this.red = red;
@@ -50,7 +51,7 @@ public class Color {
     }
 
     public void setGreen(int green) {
-        if (green < 0 || green > 255) {
+        if (green < lowerColorLimit || green > higherColorLimit) {
             throw new IllegalArgumentException();
         } else {
             this.green = green;
@@ -63,7 +64,7 @@ public class Color {
     }
 
     public void setBlue(int blue) {
-        if (blue < 0 || blue > 255) {
+        if (blue < lowerColorLimit || blue > higherColorLimit) {
             throw new IllegalArgumentException();
         } else {
             this.blue = blue;
@@ -76,8 +77,7 @@ public class Color {
     }
 
     public void setHexValue(String hex) {
-
-        if (hex == null || hex.charAt(0) != '#' || hex.length() != 7 || hex.chars().anyMatch(Character::isLowerCase)) {
+        if (hex == null || hex.charAt(0) != '#' || hex.length() != hexCodeLength || hex.chars().anyMatch(Character::isLowerCase)) {
             throw new IllegalArgumentException();
         } else {
             this.hex = hex;
