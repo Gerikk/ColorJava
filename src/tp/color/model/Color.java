@@ -29,6 +29,10 @@ public class Color {
         }
     }
 
+    private String formatStringHex(int red, int green, int blue) {
+        return String.format("#%02X%02X%02X", red, green, blue);
+    }
+
     public int getRed() {
         return this.red;
     }
@@ -36,7 +40,7 @@ public class Color {
     public void setRed(int red) {
         if (checkColorValue(red)) {
             this.red = red;
-            this.hex = String.format("#%02X%02X%02X", this.red, this.green, this.blue);
+            this.hex = formatStringHex(this.red, this.green, this.blue);
         }
     }
 
@@ -47,7 +51,7 @@ public class Color {
     public void setGreen(int green) {
         if (checkColorValue(green)) {
             this.green = green;
-            this.hex = String.format("#%02X%02X%02X", this.red, this.green, this.blue);
+            this.hex = formatStringHex(this.red, this.green, this.blue);
         }
     }
 
@@ -58,7 +62,7 @@ public class Color {
     public void setBlue(int blue) {
         if (checkColorValue(blue)) {
             this.blue = blue;
-            this.hex = String.format("#%02X%02X%02X", this.red, this.green, this.blue);
+            this.hex = formatStringHex(this.red, this.green, this.blue);
         }
     }
 
