@@ -33,6 +33,22 @@ public class Color {
         return String.format("#%02X%02X%02X", red, green, blue);
     }
 
+    private boolean checkHexadecimal(String hex) {
+        if (hex == null || hex.charAt(0) != '#' || hex.length() != hexCodeLength || hex.chars().anyMatch(Character::isLowerCase)) {
+            throw new IllegalArgumentException();
+        } else {
+            return true;
+        }
+    }
+
+    private boolean checkColorValue(int color) {
+        if (color < lowerColorLimit || color > higherColorLimit) {
+            throw new IllegalArgumentException();
+        } else {
+            return true;
+        }
+    }
+
     public int getRed() {
         return this.red;
     }
@@ -76,22 +92,6 @@ public class Color {
             this.red = Integer.valueOf(this.hex.substring(1, 3), 16);
             this.green = Integer.valueOf(this.hex.substring(3, 5), 16);
             this.blue = Integer.valueOf(this.hex.substring(5, 7), 16);
-        }
-    }
-
-    private boolean checkHexadecimal(String hex) {
-        if (hex == null || hex.charAt(0) != '#' || hex.length() != hexCodeLength || hex.chars().anyMatch(Character::isLowerCase)) {
-            throw new IllegalArgumentException();
-        } else {
-            return true;
-        }
-    }
-
-    private boolean checkColorValue(int color) {
-        if (color < lowerColorLimit || color > higherColorLimit) {
-            throw new IllegalArgumentException();
-        } else {
-            return true;
         }
     }
 
