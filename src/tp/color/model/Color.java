@@ -16,7 +16,7 @@ public class Color {
             this.red = red;
             this.green = green;
             this.blue = blue;
-            this.hex = String.format("#%02X%02X%02X", this.red, this.green, this.blue);
+            this.hex = formatStringHex(this.red, this.green, this.blue);
         }
     }
 
