@@ -13,9 +13,10 @@ public class Color {
 
     /**
      * Constructeur avec code RGB
-     * @param red int
+     *
+     * @param red   int
      * @param green int
-     * @param blue int
+     * @param blue  int
      */
     public Color(int red, int green, int blue) {
         if (checkColorValue(red) && checkColorValue(green) && checkColorValue(blue)) {
@@ -28,6 +29,7 @@ public class Color {
 
     /**
      * Constructeur avec un code hexadécimal en entrée (format #D3D3D3)
+     *
      * @param hexadecimal String (code hexadécimal)
      */
     public Color(String hexadecimal) {
@@ -41,9 +43,10 @@ public class Color {
 
     /**
      * Méthode pour formatage de code hexadécimal depuis valeurs RGB
-     * @param red
-     * @param green
-     * @param blue
+     *
+     * @param red   int
+     * @param green int
+     * @param blue  int
      * @return String hexadecimal
      */
     private String formatStringHex(int red, int green, int blue) {
@@ -52,7 +55,8 @@ public class Color {
 
     /**
      * Vérification du format de chaine hexadécimale
-     * @param hexadecimal
+     *
+     * @param hexadecimal String (format #D3D3D3)
      * @return boolean
      */
     private boolean checkHexadecimal(String hexadecimal) {
@@ -65,7 +69,8 @@ public class Color {
 
     /**
      * Vérification que la couleur est bien dans les limites établies par les constantes lowerColorLimit et higherColorLimit
-     * @param color
+     *
+     * @param color int
      * @return boolean
      */
     private boolean checkColorValue(int color) {
@@ -78,6 +83,7 @@ public class Color {
 
     /**
      * Getter pour couleur rouge
+     *
      * @return this.red
      */
     public int getRed() {
@@ -86,6 +92,7 @@ public class Color {
 
     /**
      * Setter pour couleur rouge avec redéfinition du code hexadecimal
+     *
      * @param red
      */
     public void setRed(int red) {
@@ -97,6 +104,7 @@ public class Color {
 
     /**
      * Getter pour couleur verte
+     *
      * @return this.green
      */
     public int getGreen() {
@@ -105,7 +113,8 @@ public class Color {
 
     /**
      * Setter pour couleur verte avec redéfinition du code hexadécimal
-     * @param green
+     *
+     * @param green int
      */
     public void setGreen(int green) {
         if (checkColorValue(green)) {
@@ -116,6 +125,7 @@ public class Color {
 
     /**
      * Getter pour couleur bleue
+     *
      * @return this.blue
      */
     public int getBlue() {
@@ -124,7 +134,8 @@ public class Color {
 
     /**
      * Setter pour couleur bleue avec redéfinition du code hexadécimal
-     * @param blue
+     *
+     * @param blue int
      */
     public void setBlue(int blue) {
         if (checkColorValue(blue)) {
@@ -135,7 +146,8 @@ public class Color {
 
     /**
      * Getter pour valeur de code hexadécimal
-     * @return
+     *
+     * @return hex (format #D3D3D3)
      */
     public String getHexValue() {
         return this.hex;
@@ -143,6 +155,7 @@ public class Color {
 
     /**
      * Setter pour code hexadécimal avec redéfinition des codes couleurs rgb associés
+     *
      * @param hex String (format #D3D3D3)
      */
     public void setHexValue(String hex) {
